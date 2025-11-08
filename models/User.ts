@@ -17,7 +17,10 @@ const userSchema = new Schema(
     address: addressSchema,
     hobbies: [String],
   },
-  { timestamps: { createdAt: true, updatedAt: true } }
+  {
+    timestamps: { createdAt: true, updatedAt: true },
+    collection: 'users' // I could have put 'data' here but I decided to change the collection name in my DB - this defaults to the model name below but lowercase and plural,
+}
 );
 
 // Prevent recompilation in Next.js hot reloads
