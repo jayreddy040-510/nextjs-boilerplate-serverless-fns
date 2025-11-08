@@ -1,3 +1,7 @@
-export async function GET(_req: any) {
+import { NextRequest, NextResponse } from "next/server";
+
+export async function GET(_req: NextRequest) {
     console.log(`runtime logs ${new Date()}`);
+    return new NextResponse(null, {status: 200})
+
 }
